@@ -9,6 +9,10 @@ from django.views.generic import CreateView
 
 from .forms import SignUpForm
 
+from django.contrib.auth import get_user_model
+
+User = get_user_model()
+
 def home(request):
     return render(request, "home.html")
 
