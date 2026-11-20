@@ -29,7 +29,7 @@ class Movie(models.Model):
     year = models.PositiveSmallIntegerField()
     runtime_minutes = models.PositiveSmallIntegerField(null=True, blank=True)
     overview = models.TextField(blank=True)
-    poster_url = models.URLField(blank=True)
+    poster_url = models.ImageField(blank=True, upload_to='movie_posters/')
     trailer_url = models.URLField(blank=True)
     genres = models.ManyToManyField(Genre, related_name="movies", blank=True)
     is_featured = models.BooleanField(
